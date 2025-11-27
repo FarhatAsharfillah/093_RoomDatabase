@@ -15,4 +15,15 @@ class ContainerDataApp( val context: Context):
             DatabaseSiswa.getDatabase(context).siswaDao())
     }
 }
+class AplikasiSiswa : Application(){
 
+    /**
+     * AppContainer instance digunakan oleh kelas-kelas lainnya untuk mendapatkan dependensi
+     */
+    lateinit var containerApp: ContainerApp
+
+    override fun onCreate() {
+        super.onCreate()
+        containerApp = ContainerDataApp(this)
+    }
+}
