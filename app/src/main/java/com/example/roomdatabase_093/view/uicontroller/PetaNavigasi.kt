@@ -17,43 +17,45 @@ import com.example.roomdatabase_093.view.route.DestinasiEntry
 import com.example.roomdatabase_093.view.route.DestinasiHome
 
 @Composable
-fun Siswa_App(
-    navController: NavHostController = rememberNavController(),
+fun SiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier){
+    HostNavigasi(navController = navController)
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HostNavigasi(
+    navController: NavHostController,
     modifier: Modifier = Modifier
-) {
-    NavHost(
-        navController = navController,
-        startDestination = DestinasiHome.route,
-        modifier = modifier
-    ) {
-        // Halaman Home
-        composable(route = DestinasiHome.route) {
+){
+    NavHost(navController=navController, startDestination = DestinasiHome.route, modifier = Modifier)
+    {
+        composable(DestinasiHome.route) {
             HomeScreen(
                 navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
-                // Tambahkan koma di atas ^
+                //edit 1
                 navigateToItemUpdate = {
-                    navController.navigate("${DestinasiDetailSiswa.route}/$it")
-                }
+                    navController.navigate("${DestinasiDetailSiswa.route}/${it}")}
             )
         }
-
-        // Halaman Entry
-        composable(route = DestinasiEntry.route) {
-            EntrySiswaScreen(navigateBack = { navController.popBackStack() })
+        composable(DestinasiEntry.route){
+            EntrySiswaScreen(navigateBack = { navController.popBackStack()})
         }
 
-        // Halaman Detail
-        composable(
-            route = DestinasiDetailSiswa.routeWithArgs,
-            arguments = listOf(
-                navArgument(DestinasiDetailSiswa.itemIdArg) { // Hapus titik (.) sebelum navArgument
-                    type = NavType.IntType
-                }
-            )
-        ) {
+        //edit 2
+        composable(route = DestinasiDetailSiswa.routeWithArgs,
+            arguments = listOf(navArgument(itemIdArg) {
+                type = NavType.IntType})
+        ){
             DetailSiswaScreen(
-                navigateBack = { navController.navigateUp() }
+                //navigateToEditItem = {navController.navigate("${DestinasiEditsiswa.route}/$it")},
+                navigateBack = {navController.navigateUp()})
+        }
+        composable(route=DestinasiEditSiswa.routeWithArgs,
+            arguments= listOf(navArgument(DestinasiEditSiswa.itemIdArgh){
+                type= NavType.IntType })) {
+            editSiswaScreen(
+                navigateBack = {navController.popBackStack()},
+                onNavigateUp = {navController.navigateUp()}
             )
         }
-    }
-}
+    }}
