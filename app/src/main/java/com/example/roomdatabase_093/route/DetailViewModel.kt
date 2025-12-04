@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.roomdatabase_093.repositori.RepositoriSiswa
-import com.example.roomdatabase_093.route.DestinasiDetailSiswa
+import com.example.roomdatabase_093.view.route.DestinasiDetailSiswa
 import com.example.roomdatabase_093.viewmodel.DetailSiswa
 import com.example.roomdatabase_093.viewmodel.toDetailSiswa
 import com.example.roomdatabase_093.viewmodel.toSiswa
