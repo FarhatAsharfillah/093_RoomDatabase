@@ -1,7 +1,6 @@
 package com.example.roomdatabase_093.view
 
 
-
 import android.R.attr.id
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
