@@ -1,5 +1,7 @@
 package com.example.roomdatabase_093.view
 
+
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,11 +27,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomdatabase_093.R
+import com.example.roomdatabase_093.view.route.DestinasiEntry
 import com.example.roomdatabase_093.viewmodel.DetailSiswa
 import com.example.roomdatabase_093.viewmodel.EntryViewModel
 import com.example.roomdatabase_093.viewmodel.UIStateSiswa
 import com.example.roomdatabase_093.viewmodel.provider.PenyediaViewModel
-
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -123,8 +125,8 @@ fun FormInputSiswa(
             singleLine = true
         )
         OutlinedTextField(
-            value = detailSiswa.telpon,
-            onValueChange = {onValueChange(detailSiswa.copy(telpon = it))},
+            value = detailSiswa.telepon,
+            onValueChange = {onValueChange(detailSiswa.copy(telepon = it))},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(text = stringResource(R.string.telpon)) },
             modifier = Modifier.fillMaxWidth(),
