@@ -7,15 +7,15 @@ import androidx.lifecycle.ViewModel
 import com.example.roomdatabase_093.repositori.RepositoriSiswa
 import com.example.roomdatabase_093.room.Siswa
 
+
 class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
 
     private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa): Boolean{
         return with(uiState){
-            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+            nama.isNotBlank() && alamat.isNotBlank() && telepon.isNotBlank()
         }
     }
-
     fun updateUiState(detailSiswa: DetailSiswa){
         uiStateSiswa =
             UIStateSiswa(detailSiswa = detailSiswa,
@@ -28,10 +28,6 @@ class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() 
         }
     }
 }
-
-/**
- * mewakili status UI saat ini
- */
 data class UIStateSiswa(
     val detailSiswa: DetailSiswa = DetailSiswa(),
     val isEntryValid: Boolean = false
@@ -39,21 +35,16 @@ data class UIStateSiswa(
 
 data class DetailSiswa(
     val id: Int = 0,
-    val nama: String = "",
+    val nama: String ="",
     val alamat: String = "",
-    val telpon: String = "",
+    val telepon: String = "",
 )
-
-/**
- * Fungsi untuk mengkonversi data input ke data dalam tabel sesuai jenis datanya
- */
 fun DetailSiswa.toSiswa(): Siswa = Siswa(
     id = id,
     nama = nama,
     alamat = alamat,
-    telpon = telpon
+    telepon = telepon
 )
-
 fun Siswa.toUiStateSiswa(isEntryValid: Boolean = false)
         : UIStateSiswa = UIStateSiswa(
     detailSiswa = this.toDetailSiswa(),
@@ -64,5 +55,5 @@ fun Siswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
     id = id,
     nama = nama,
     alamat = alamat,
-    telpon = telpon
+    telepon = telepon
 )
