@@ -38,7 +38,7 @@ import com.example.roomdatabase_093.R
 import com.example.roomdatabase_093.room.Siswa
 import com.example.roomdatabase_093.view.route.DestinasiDetailSiswa
 import com.example.roomdatabase_093.viewmodel.DetailSiswaUiState
-import com.example.roomdatabase_093.route.DetailViewModel
+import com.example.roomdatabase_093.viewmodel.DetailViewModel
 import com.example.roomdatabase_093.viewmodel.provider.PenyediaViewModel
 import com.example.roomdatabase_093.viewmodel.toSiswa
 import kotlinx.coroutines.launch
@@ -164,7 +164,7 @@ fun DetailDataSiswa(
             )
             BarisDetailData(
                 labelResID = R.string.telpon1,
-                itemDetail = siswa.telpon,
+                itemDetail = siswa.telepon,
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(
                         id = R.dimen
