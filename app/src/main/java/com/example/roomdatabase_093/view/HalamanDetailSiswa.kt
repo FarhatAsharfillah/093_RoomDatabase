@@ -1,4 +1,4 @@
-package com.example.roomdatabase_093.route
+package com.example.roomdatabase_093.view
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -39,7 +39,6 @@ import com.example.roomdatabase_093.room.Siswa
 import com.example.roomdatabase_093.route.DestinasiDetailSiswa
 import com.example.roomdatabase_093.viewmodel.DetailSiswaUiState
 import com.example.roomdatabase_093.route.DetailViewModel
-import com.example.roomdatabase_093.view.SiswaTopAppBar
 import com.example.roomdatabase_093.viewmodel.provider.PenyediaViewModel
 import com.example.roomdatabase_093.viewmodel.toSiswa
 import kotlinx.coroutines.launch

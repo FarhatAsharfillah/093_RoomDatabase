@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.roomdatabase_093.route.DestinasiDetailSiswa
-import com.example.roomdatabase_093.route.DetailSiswaScreen
+import com.example.roomdatabase_093.view.DetailSiswaScreen
 import com.example.roomdatabase_093.view.EntrySiswaScreen
 import com.example.roomdatabase_093.view.HomeScreen
 import com.example.roomdatabase_093.view.route.DestinasiEntry
